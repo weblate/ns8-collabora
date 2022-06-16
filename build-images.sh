@@ -13,14 +13,14 @@ reponame="collabora"
 # Create a new empty container image
 container=$(buildah from scratch)
 
-# Reuse existing nodebuilder-collabora container, to speed up builds
-if ! buildah containers --format "{{.ContainerName}}" | grep -q nodebuilder-collabora; then
+# Reuse existing nodebuilder-code container, to speed up builds
+if ! buildah containers --format "{{.ContainerName}}" | grep -q nodebuilder-code; then
     echo "Pulling NodeJS runtime..."
-    buildah from --name nodebuilder-collabora -v "${PWD}:/usr/src:Z" docker.io/library/node:lts
+    buildah from --name nodebuilder-code -v "${PWD}:/usr/src:Z" docker.io/library/node:lts
 fi
 
 echo "Build static UI files with node..."
-buildah run nodebuilder-collabora sh -c "cd /usr/src/ui && yarn install && yarn build"
+buildah run nodebuilder-code sh -c "cd /usr/src/ui && yarn install && yarn build"
 
 # Add imageroot directory to the container image
 buildah add "${container}" imageroot /imageroot
@@ -30,7 +30,7 @@ buildah config --entrypoint=/ \
     --label="org.nethserver.authorizations=traefik@any:routeadm" \
     --label="org.nethserver.tcp-ports-demand=1" \
     --label="org.nethserver.rootfull=0" \
-    --label="org.nethserver.images=docker.io/jmalloc/echo-server:latest" \
+    --label="org.nethserver.images=docker.io/collabora/code:21.11.5.3.1" \
     "${container}"
 # Commit the image
 buildah commit "${container}" "${repobase}/${reponame}"
