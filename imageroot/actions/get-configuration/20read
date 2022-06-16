@@ -19,11 +19,22 @@
 # You should have received a copy of the GNU General Public License
 # along with NethServer.  If not, see COPYING.
 #
-
+import os
 import json
 import sys
 import agent
 
+# Prepare return variable
 config = {}
 
+# Read current configuration from Redis
+env = f'module/{os.environ["MODULE_ID"]}/environment'
+rdb = agent.redis_connect()
+
+config["admin_password"] =  rdb.hget(env, "ADMIN_PASSWORD");
+config["host"] =  rdb.hget(env, "TRAEFIK_HOST");
+config["http2https"] =  rdb.hget(env, "TRAEFIK_HTTP2HTTPS") == "True";
+config["lets_encrypt"] =  rdb.hget(env, "TRAEFIK_LETS_ENCRYPT") == "True";
+
+# Dump the configuratio to stdout
 json.dump(config, fp=sys.stdout)
