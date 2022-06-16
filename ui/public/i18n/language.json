@@ -22,9 +22,18 @@
   },
   "settings": {
     "title": "Settings",
-    "configure_instance": "Configure {instance}",
+    "collabora_fqdn": "collabora FQDN",
     "save": "Save",
-    "test_filed": "Test field"
+    "lets_encrypt": "Let's Encrypt",
+    "http_to_https": "HTTP to HTTPS",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "instance_configuration": "Configure {instance}",
+    "configuring": "Configuring...",
+    "email_format": "Invalid email address",
+    "domain_already_used_in_traefik": "This domain is already used in traefik",
+    "collabora_admin_password": "password for admin console (user is 'admin')",
+    "link": "Admin console"
   },
   "about": {
     "title": "About"
