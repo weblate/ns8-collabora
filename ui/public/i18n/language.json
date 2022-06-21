@@ -33,7 +33,8 @@
     "email_format": "Invalid email address",
     "domain_already_used_in_traefik": "This domain is already used in traefik",
     "collabora_admin_password": "password for admin console (user is 'admin')",
-    "link": "Admin console"
+    "link": "Admin console",
+    "admin_password_string_gte":"The password length must be superior or equal to 8 characters"
   },
   "about": {
     "title": "About"
