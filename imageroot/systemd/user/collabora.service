@@ -1,27 +1,27 @@
-#
-# This systemd unit starts a collabora instance using Podman.
-# Most parts of this file come from podman-generate-systemd.
-#
-
 [Unit]
-Description=Podman collabora.service
-Requires=collabora-app.service
-Before=collabora-app.service
+Description=Podman  collabora.service
 
 [Service]
 Environment=PODMAN_SYSTEMD_UNIT=%n
-EnvironmentFile=-%S/state/environment
+EnvironmentFile=%S/state/environment
+WorkingDirectory=%S/state
 Restart=always
 TimeoutStopSec=70
-ExecStartPre=/bin/rm -f %t/collabora.pid %t/collabora.pod-id
-ExecStartPre=/usr/bin/podman pod create --infra-conmon-pidfile %t/collabora.pid \
-    --pod-id-file %t/collabora.pod-id \
-    --name collabora \
+ExecStartPre=/bin/rm -f %t/collabora.pid %t/collabora.ctr-id
+ExecStart=/usr/bin/podman run --conmon-pidfile %t/collabora.pid \
+    --cidfile %t/collabora.ctr-id --cgroups=no-conmon \
+    --replace -d --name  collabora --cap-add MKNOD \
+    --env aliasgroup2=https://${TRAEFIK_HOST}:443 \
+    --env username=admin \
+    --env password=${ADMIN_PASSWORD} \
+    --env "extra_params=--o:ssl.enable=false --o:ssl.termination=true" \
+    --env dictionnaries="de_DE en_GB en_US es_ES fr_FR it nl pt_BR pt_PT ru" \
     --publish 127.0.0.1:${TCP_PORT}:9980 \
-    --replace
-ExecStart=/usr/bin/podman pod start --pod-id-file %t/collabora.pod-id
-ExecStop=/usr/bin/podman pod stop --ignore --pod-id-file %t/collabora.pod-id -t 10
-ExecStopPost=/usr/bin/podman pod rm --ignore -f --pod-id-file %t/collabora.pod-id
+    ${CODE_IMAGE}
+ExecStop=/usr/bin/podman stop --ignore --cidfile %t/collabora.ctr-id -t 10
+ExecReload=/usr/bin/podman kill -s HUP collabora
+SyslogIdentifier=%u
+ExecStopPost=/usr/bin/podman rm --ignore -f --cidfile %t/collabora.ctr-id
 PIDFile=%t/collabora.pid
 Type=forking
 
