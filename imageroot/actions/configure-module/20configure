@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 #
 # Copyright (C) 2022 Nethesis S.r.l.
 # http://www.nethesis.it - nethserver@nethesis.it
@@ -26,22 +25,44 @@ import agent
 import agent.tasks
 import os
 
-request = json.load(sys.stdin)
+# Try to parse the stdin as JSON.
+# If parsing fails, output everything to stderr
+data = json.load(sys.stdin)
 
-# TODO: do something with the request payload. For example configure a
-# custom route in our web router. Here the path is hardcoded as
-# 'collabora'.
+# Setup default values
+host = data.get("host")
+h2hs = data.get("http2https", True)
+le = data.get("lets_encrypt", False)
 
-# Configure Traefik to route "/collabora" path requests to the collabora service
+# set the password of collabora
+password = data.get("admin_password", "")
+
+# Talk with agent using file descriptor.
+# Setup configuration from user input.
+agent.set_env("TRAEFIK_HOST", host)
+agent.set_env("TRAEFIK_HTTP2HTTPS", h2hs)
+agent.set_env("TRAEFIK_LETS_ENCRYPT", le)
+agent.set_env("ADMIN_PASSWORD", password)
+
+# Make sure everything is saved inside the environment file
+# just before starting systemd unit
+agent.dump_env()
+
+# Find default traefik instance for current node
+default_traefik_id = agent.resolve_agent_id('traefik@node')
+if default_traefik_id is None:
+    sys.exit(2)
+
+# Configure Traefik to route
 response = agent.tasks.run(
     agent_id=agent.resolve_agent_id('traefik@node'),
     action='set-route',
     data={
         'instance': os.environ['MODULE_ID'],
         'url':  'http://127.0.0.1:' + os.environ["TCP_PORT"],
-        'http2https': False,
-        'lets_encrypt': False,
-        'path': '/collabora',
+        'host': host,
+        'http2https': h2hs,
+        'lets_encrypt': le
     },
 )
 

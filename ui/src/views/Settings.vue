@@ -1,43 +1,82 @@
 <template>
-  <cv-grid fullWidth>
-    <cv-row>
-      <cv-column class="page-title">
+  <div class="bx--grid bx--grid--full-width">
+    <div class="bx--row">
+      <div class="bx--col-lg-16 page-title">
         <h2>{{ $t("settings.title") }}</h2>
-      </cv-column>
-    </cv-row>
-    <cv-row v-if="error.getConfiguration">
-      <cv-column>
+      </div>
+    </div>
+    <div v-if="error.getConfiguration" class="bx--row">
+      <div class="bx--col">
         <NsInlineNotification
           kind="error"
           :title="$t('action.get-configuration')"
           :description="error.getConfiguration"
           :showCloseButton="false"
         />
-      </cv-column>
-    </cv-row>
-    <cv-row>
-      <cv-column>
-        <cv-tile light>
+      </div>
+    </div>
+    <div class="bx--row">
+      <div class="bx--col-lg-16">
+        <cv-tile :light="true">
           <cv-form @submit.prevent="configureModule">
-            <!-- TODO remove test field and code configuration fields -->
             <cv-text-input
-              :label="$t('settings.test_filed')"
-              v-model="testField"
-              :placeholder="$t('settings.test_filed')"
+              :label="$t('settings.collabora_fqdn')"
+              placeholder="collabora.example.org"
+              v-model.trim="host"
+              class="mg-bottom"
+              :invalid-message="$t(error.host)"
               :disabled="loading.getConfiguration || loading.configureModule"
-              :invalid-message="error.testField"
-              ref="testField"
-            ></cv-text-input>
-            <cv-row v-if="error.configureModule">
-              <cv-column>
+              ref="host"
+            >
+            </cv-text-input>
+            <cv-text-input
+              :label="$t('settings.collabora_admin_password')"
+              placeholder="my_secret_password"
+              v-model.trim="admin_password"
+              class="mg-bottom"
+              :invalid-message="$t(error.admin_password)"
+              :disabled="loading.getConfiguration || loading.configureModule"
+              ref="admin_password"
+            >
+            </cv-text-input>
+            <cv-toggle
+              value="letsEncrypt"
+              :label="$t('settings.lets_encrypt')"
+              v-model="isLetsEncryptEnabled"
+              :disabled="loading.getConfiguration || loading.configureModule"
+              class="mg-bottom"
+            >
+              <template slot="text-left">{{
+                $t("settings.disabled")
+              }}</template>
+              <template slot="text-right">{{
+                $t("settings.enabled")
+              }}</template>
+            </cv-toggle>
+            <cv-toggle
+              value="httpToHttps"
+              :label="$t('settings.http_to_https')"
+              v-model="isHttpToHttpsEnabled"
+              :disabled="loading.getConfiguration || loading.configureModule"
+              class="mg-bottom"
+            >
+              <template slot="text-left">{{
+                $t("settings.disabled")
+              }}</template>
+              <template slot="text-right">{{
+                $t("settings.enabled")
+              }}</template>
+            </cv-toggle>
+            <div v-if="error.configureModule" class="bx--row">
+              <div class="bx--col">
                 <NsInlineNotification
                   kind="error"
                   :title="$t('action.configure-module')"
                   :description="error.configureModule"
                   :showCloseButton="false"
                 />
-              </cv-column>
-            </cv-row>
+              </div>
+            </div>
             <NsButton
               kind="primary"
               :icon="Save20"
@@ -47,9 +86,9 @@
             >
           </cv-form>
         </cv-tile>
-      </cv-column>
-    </cv-row>
-  </cv-grid>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -60,18 +99,11 @@ import {
   UtilService,
   TaskService,
   IconService,
-  PageTitleService,
 } from "@nethserver/ns8-ui-lib";
 
 export default {
   name: "Settings",
-  mixins: [
-    TaskService,
-    IconService,
-    UtilService,
-    QueryParamService,
-    PageTitleService,
-  ],
+  mixins: [TaskService, IconService, UtilService, QueryParamService],
   pageTitle() {
     return this.$t("settings.title") + " - " + this.appName;
   },
@@ -81,7 +113,10 @@ export default {
         page: "settings",
       },
       urlCheckInterval: null,
-      testField: "", // TODO remove
+      host: "",
+      admin_password:"",
+      isLetsEncryptEnabled: false,
+      isHttpToHttpsEnabled: false,
       loading: {
         getConfiguration: false,
         configureModule: false,
@@ -89,12 +124,18 @@ export default {
       error: {
         getConfiguration: "",
         configureModule: "",
-        testField: "", // TODO remove
+        host: "",
+        admin_password:"",
+        lets_encrypt: "",
+        http2https: "",
       },
     };
   },
   computed: {
     ...mapState(["instanceName", "core", "appName"]),
+  },
+  created() {
+    this.getConfiguration();
   },
   beforeRouteEnter(to, from, next) {
     next((vm) => {
@@ -106,25 +147,23 @@ export default {
     clearInterval(this.urlCheckInterval);
     next();
   },
-  created() {
-    this.getConfiguration();
-  },
   methods: {
     async getConfiguration() {
       this.loading.getConfiguration = true;
       this.error.getConfiguration = "";
       const taskAction = "get-configuration";
-      const eventId = this.getUuid();
 
       // register to task error
+      this.core.$root.$off(taskAction + "-aborted");
       this.core.$root.$once(
-        `${taskAction}-aborted-${eventId}`,
+        taskAction + "-aborted",
         this.getConfigurationAborted
       );
 
       // register to task completion
+      this.core.$root.$off(taskAction + "-completed");
       this.core.$root.$once(
-        `${taskAction}-completed-${eventId}`,
+        taskAction + "-completed",
         this.getConfigurationCompleted
       );
 
@@ -134,7 +173,6 @@ export default {
           extra: {
             title: this.$t("action." + taskAction),
             isNotificationHidden: true,
-            eventId,
           },
         })
       );
@@ -149,46 +187,47 @@ export default {
     },
     getConfigurationAborted(taskResult, taskContext) {
       console.error(`${taskContext.action} aborted`, taskResult);
-      this.error.getConfiguration = this.$t("error.generic_error");
+      this.error.getConfiguration = this.core.$t("error.generic_error");
       this.loading.getConfiguration = false;
     },
     getConfigurationCompleted(taskContext, taskResult) {
-      this.loading.getConfiguration = false;
       const config = taskResult.output;
-
-      // TODO set configuration fields
-      // ...
-
-      // TODO remove
-      console.log("config", config);
-
-      // TODO focus first configuration field
-      this.focusElement("testField");
+      this.host = config.host;
+      this.admin_password = config.admin_password;
+      this.isLetsEncryptEnabled = config.lets_encrypt;
+      this.isHttpToHttpsEnabled = config.http2https;
+      this.loading.getConfiguration = false;
+      this.focusElement("host");
     },
     validateConfigureModule() {
       this.clearErrors(this);
+
       let isValidationOk = true;
 
-      // TODO remove testField and validate configuration fields
-      if (!this.testField) {
-        // test field cannot be empty
-        this.error.testField = this.$t("common.required");
+      if (!this.host) {
+        this.error.host = "common.required";
 
         if (isValidationOk) {
-          this.focusElement("testField");
-          isValidationOk = false;
+          this.focusElement("host");
         }
+        isValidationOk = false;
       }
+
       return isValidationOk;
     },
     configureModuleValidationFailed(validationErrors) {
       this.loading.configureModule = false;
+      let focusAlreadySet = false;
 
       for (const validationError of validationErrors) {
         const param = validationError.parameter;
-
         // set i18n error message
-        this.error[param] = this.$t("settings." + validationError.error);
+        this.error[param] = "settings." + validationError.error;
+
+        if (!focusAlreadySet) {
+          this.focusElement(param);
+          focusAlreadySet = true;
+        }
       }
     },
     async configureModule() {
@@ -199,23 +238,25 @@ export default {
 
       this.loading.configureModule = true;
       const taskAction = "configure-module";
-      const eventId = this.getUuid();
 
       // register to task error
+      this.core.$root.$off(taskAction + "-aborted");
       this.core.$root.$once(
-        `${taskAction}-aborted-${eventId}`,
+        taskAction + "-aborted",
         this.configureModuleAborted
       );
 
       // register to task validation
+      this.core.$root.$off(taskAction + "-validation-failed");
       this.core.$root.$once(
-        `${taskAction}-validation-failed-${eventId}`,
+        taskAction + "-validation-failed",
         this.configureModuleValidationFailed
       );
 
       // register to task completion
+      this.core.$root.$off(taskAction + "-completed");
       this.core.$root.$once(
-        `${taskAction}-completed-${eventId}`,
+        taskAction + "-completed",
         this.configureModuleCompleted
       );
 
@@ -223,14 +264,16 @@ export default {
         this.createModuleTaskForApp(this.instanceName, {
           action: taskAction,
           data: {
-            // TODO configuration fields
+            host: this.host,
+            admin_password: this.admin_password,
+            lets_encrypt: this.isLetsEncryptEnabled,
+            http2https: this.isHttpToHttpsEnabled,
           },
           extra: {
-            title: this.$t("settings.configure_instance", {
+            title: this.$t("settings.instance_configuration", {
               instance: this.instanceName,
             }),
-            description: this.$t("common.processing"),
-            eventId,
+            description: this.$t("settings.configuring"),
           },
         })
       );
@@ -245,7 +288,7 @@ export default {
     },
     configureModuleAborted(taskResult, taskContext) {
       console.error(`${taskContext.action} aborted`, taskResult);
-      this.error.configureModule = this.$t("error.generic_error");
+      this.error.configureModule = this.core.$t("error.generic_error");
       this.loading.configureModule = false;
     },
     configureModuleCompleted() {
@@ -260,4 +303,7 @@ export default {
 
 <style scoped lang="scss">
 @import "../styles/carbon-utils";
+.mg-bottom {
+  margin-bottom: $spacing-06;
+}
 </style>

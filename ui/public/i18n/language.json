@@ -18,13 +18,25 @@
     "mount": "Mount",
     "no_services": "No services",
     "no_images": "No images",
-    "no_volumes": "No volumes"
+    "no_volumes": "No volumes",
+    "collabora_admin_url": "Admin console",
+    "open_collabora_admin_page":"Open console"
   },
   "settings": {
     "title": "Settings",
-    "configure_instance": "Configure {instance}",
+    "collabora_fqdn": "collabora FQDN",
     "save": "Save",
-    "test_filed": "Test field"
+    "lets_encrypt": "Let's Encrypt",
+    "http_to_https": "HTTP to HTTPS",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "instance_configuration": "Configure {instance}",
+    "configuring": "Configuring...",
+    "email_format": "Invalid email address",
+    "domain_already_used_in_traefik": "This domain is already used in traefik",
+    "collabora_admin_password": "password for admin console (user is 'admin')",
+    "link": "Admin console",
+    "admin_password_string_gte":"The password length must be superior or equal to 8 characters"
   },
   "about": {
     "title": "About"

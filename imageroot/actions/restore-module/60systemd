@@ -20,7 +20,10 @@
 # along with NethServer.  If not, see COPYING.
 #
 
-# If the control reaches this step, the service can be enabled and started
+set -e
 
-systemctl --user enable collabora.service
-systemctl --user restart collabora.service
+# Redirect any output to the journal (stderr)
+exec 1>&2
+
+# Enable and restart the service
+systemctl --user enable --now collabora.service
