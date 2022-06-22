@@ -18,7 +18,9 @@
     "mount": "Mount",
     "no_services": "No services",
     "no_images": "No images",
-    "no_volumes": "No volumes"
+    "no_volumes": "No volumes",
+    "collabora_admin_url": "Admin console",
+    "open_collabora_admin_page":"Open console"
   },
   "settings": {
     "title": "Settings",

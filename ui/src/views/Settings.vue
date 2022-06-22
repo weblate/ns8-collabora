@@ -39,14 +39,6 @@
               ref="admin_password"
             >
             </cv-text-input>
-            <cv-link v-if="host && admin_password"
-              class="mg-bottom mg-left"
-              :href="'https://' + host + '/browser/dist/admin/adminSettings.html'"
-              target="_blank"
-              :inline="false"
-            >
-              {{ $t("settings.link") }}
-            </cv-link>
             <cv-toggle
               value="letsEncrypt"
               :label="$t('settings.lets_encrypt')"
