@@ -62,3 +62,16 @@ Test the module using the `test-module.sh` script:
     ./test-module.sh <NODE_ADDR> ghcr.io/nethserver/collabora:latest
 
 The tests are made using [Robot Framework](https://robotframework.org/)
+
+## Enable Collabora inside Nextcloud
+
+install nextcloud in ns8, then install Nextcloud Office (richdocuments) by the web interface of the administrator session (alternatively a bulk of default software is proposed at the first admin login creation, just accept it) then go to  Settings > Administration > Office and set the correct url to collabora (verify the certificate or not in case of self-signed)
+
+or ssh to nextcloud and install it by hand
+
+```
+ssh nextcloud1@localhost
+.config/bin/occ  app:install richdocuments
+.config/bin/occ config:app:set richdocuments wopi_url --value=https://collabora.domain.com
+.config/bin/occ app:enable richdocuments
+```
