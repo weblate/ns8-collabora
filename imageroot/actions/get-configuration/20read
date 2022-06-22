@@ -29,8 +29,8 @@ config = {}
 
 config["admin_password"] =  os.environ.get("ADMIN_PASSWORD",'')
 config["host"] = os.environ.get("TRAEFIK_HOST",'')
-config["http2https"] =  os.environ.get("TRAEFIK_HTTP2HTTPS",False) == "True"
-config["lets_encrypt"] =  os.environ.get("TRAEFIK_LETS_ENCRYPT",False) == "True"
+config["http2https"] =  os.environ.get("TRAEFIK_HTTP2HTTPS","False") == "True"
+config["lets_encrypt"] =  os.environ.get("TRAEFIK_LETS_ENCRYPT","False") == "True"
 
 
 # Dump the configuratio to stdout
