@@ -14,7 +14,7 @@ ExecStart=/usr/bin/podman run --conmon-pidfile %t/collabora.pid \
     --env aliasgroup2=https://${TRAEFIK_HOST}:443 \
     --env username=admin \
     --env password=${ADMIN_PASSWORD} \
-    --env "extra_params=--o:ssl.enable=false --o:ssl.termination=true" \
+    --env "extra_params=--o:ssl.enable=false --o:ssl.termination=true --o:security.capabilities=false" \
     --env dictionnaries="de_DE en_GB en_US es_ES fr_FR it nl pt_BR pt_PT ru" \
     --publish 127.0.0.1:${TCP_PORT}:9980 \
     ${CODE_IMAGE}
