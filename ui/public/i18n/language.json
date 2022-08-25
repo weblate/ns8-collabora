@@ -20,7 +20,7 @@
     "no_images": "No images",
     "no_volumes": "No volumes",
     "collabora_admin_url": "Admin console",
-    "open_collabora_admin_page":"Open console"
+    "open_collabora_admin_page": "Open console"
   },
   "settings": {
     "title": "Settings",
@@ -36,7 +36,9 @@
     "domain_already_used_in_traefik": "This domain is already used in traefik",
     "collabora_admin_password": "password for admin console (user is 'admin')",
     "link": "Admin console",
-    "admin_password_string_gte":"The password length must be superior or equal to 8 characters"
+    "admin_password_string_gte": "The password length must be superior or equal to 8 characters",
+    "placeholder_admin_password": "Type a password",
+    "placeholder_collabora_domain": "Type a fully qualified domain name"
   },
   "about": {
     "title": "About"
