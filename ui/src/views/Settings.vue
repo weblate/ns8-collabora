@@ -22,7 +22,7 @@
             <NsTextInput
               :label="$t('settings.collabora_fqdn')"
               :placeholder="$t('settings.placeholder_collabora_domain')"
-              v-model="host"
+              v-model.trim="host"
               :invalid-message="$t(error.host)"
               :disabled="loading.getConfiguration || loading.configureModule"
               ref="host"
@@ -31,7 +31,7 @@
             <NsTextInput
               :label="$t('settings.collabora_admin_password')"
               :placeholder="$t('settings.placeholder_admin_password')"
-              v-model="admin_password"
+              v-model.trim="admin_password"
               :invalid-message="$t(error.admin_password)"
               :disabled="loading.getConfiguration || loading.configureModule"
               type="password"
