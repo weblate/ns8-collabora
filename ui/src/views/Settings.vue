@@ -19,26 +19,25 @@
       <div class="bx--col-lg-16">
         <cv-tile :light="true">
           <cv-form @submit.prevent="configureModule">
-            <cv-text-input
+            <NsTextInput
               :label="$t('settings.collabora_fqdn')"
-              placeholder="collabora.example.org"
+              :placeholder="$t('settings.placeholder_collabora_domain')"
               v-model.trim="host"
-              class="mg-bottom"
               :invalid-message="$t(error.host)"
               :disabled="loading.getConfiguration || loading.configureModule"
               ref="host"
             >
-            </cv-text-input>
-            <cv-text-input
+            </NsTextInput>
+            <NsTextInput
               :label="$t('settings.collabora_admin_password')"
-              placeholder="my_secret_password"
-              v-model.trim="admin_password"
-              class="mg-bottom"
+              :placeholder="$t('settings.placeholder_admin_password')"
+              v-model="admin_password"
               :invalid-message="$t(error.admin_password)"
               :disabled="loading.getConfiguration || loading.configureModule"
+              type="password"
               ref="admin_password"
             >
-            </cv-text-input>
+            </NsTextInput>
             <cv-toggle
               value="letsEncrypt"
               :label="$t('settings.lets_encrypt')"
