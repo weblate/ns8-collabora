@@ -75,3 +75,12 @@ ssh nextcloud1@localhost
 .config/bin/occ config:app:set richdocuments wopi_url --value=https://collabora.domain.com
 .config/bin/occ app:enable richdocuments
 ```
+
+## UI translation
+
+Translated with [Weblate](https://hosted.weblate.org/projects/ns8/).
+
+To setup the translation process:
+
+- add [GitHub Weblate app](https://docs.weblate.org/en/latest/admin/continuous.html#github-setup) to your repository
+- add your repository to [hosted.weblate.org](https://hosted.weblate.org) or ask a NethServer developer to add it to ns8 Weblate project
