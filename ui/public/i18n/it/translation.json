@@ -1,0 +1,71 @@
+{
+    "status": {
+        "app_volumes": "",
+        "created": "Creato",
+        "mount": "",
+        "no_services": "Nessun servizio",
+        "no_volumes": "Nessun volume",
+        "open_collabora_admin_page": "",
+        "services": "Servizio | Servizi",
+        "installation_node": "",
+        "size": "Dimensione",
+        "app_images": "",
+        "title": "Stato",
+        "collabora_admin_url": "",
+        "node": "Nodo",
+        "name": "Nome",
+        "no_images": "Nessuna immagine",
+        "app_instance": ""
+    },
+    "settings": {
+        "lets_encrypt": "",
+        "enabled": "",
+        "disabled": "",
+        "email_format": "",
+        "collabora_admin_password": "",
+        "link": "",
+        "admin_password_string_gte": "",
+        "placeholder_admin_password": "",
+        "collabora_fqdn": "",
+        "title": "Impostazioni",
+        "placeholder_collabora_domain": "",
+        "save": "Salva",
+        "domain_already_used_in_traefik": "",
+        "configuring": "",
+        "http_to_https": "",
+        "instance_configuration": ""
+    },
+    "about": {
+        "title": ""
+    },
+    "task": {
+        "cannot_create_task": ""
+    },
+    "action": {
+        "get-status": "",
+        "get-configuration": "",
+        "configure-module": "Configura modulo",
+        "get-module-info": "",
+        "get-name": "",
+        "list-backup-repositories": "",
+        "list-backups": "",
+        "list-installed-modules": ""
+    },
+    "error": {
+        "cannot_retrieve_module_info": "",
+        "error": "Errore",
+        "404": "Risorsa non trovata",
+        "network_error": "Errore di rete",
+        "network_timeout": "",
+        "generic_error": "",
+        "403": "",
+        "validation_error": "Errore di validazione",
+        "cannot_retrieve_installed_modules": "",
+        "401": ""
+    },
+    "common": {
+        "required": "Obbligatorio",
+        "processing": "",
+        "work_in_progress": ""
+    }
+}
