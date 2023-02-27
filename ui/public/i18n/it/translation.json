@@ -1,21 +1,21 @@
 {
     "status": {
-        "app_volumes": "",
+        "app_volumes": "Volume app|Volumi app",
         "created": "Creato",
-        "mount": "",
+        "mount": "Percorso di mount",
         "no_services": "Nessun servizio",
         "no_volumes": "Nessun volume",
         "open_collabora_admin_page": "",
         "services": "Servizio | Servizi",
-        "installation_node": "",
+        "installation_node": "Nodo",
         "size": "Dimensione",
-        "app_images": "",
+        "app_images": "Immagine app|Immagini app",
         "title": "Stato",
         "collabora_admin_url": "",
         "node": "Nodo",
         "name": "Nome",
         "no_images": "Nessuna immagine",
-        "app_instance": ""
+        "app_instance": "Istanza app"
     },
     "settings": {
         "lets_encrypt": "",
@@ -36,36 +36,36 @@
         "instance_configuration": ""
     },
     "about": {
-        "title": ""
+        "title": "Informazioni"
     },
     "task": {
-        "cannot_create_task": ""
+        "cannot_create_task": "Impossibile eseguire task {action}"
     },
     "action": {
-        "get-status": "",
-        "get-configuration": "",
+        "get-status": "Visualizza stato",
+        "get-configuration": "Visualizza configurazione",
         "configure-module": "Configura modulo",
-        "get-module-info": "",
-        "get-name": "",
-        "list-backup-repositories": "",
-        "list-backups": "",
-        "list-installed-modules": ""
+        "get-module-info": "Visualizza info modulo",
+        "get-name": "Visualizza nome",
+        "list-backup-repositories": "Elenca repository di backup",
+        "list-backups": "Elenca backup",
+        "list-installed-modules": "Elenca moduli installati"
     },
     "error": {
-        "cannot_retrieve_module_info": "",
+        "cannot_retrieve_module_info": "Impossibile recuperare info modulo",
         "error": "Errore",
         "404": "Risorsa non trovata",
         "network_error": "Errore di rete",
-        "network_timeout": "",
-        "generic_error": "",
-        "403": "",
+        "network_timeout": "Timeout di rete",
+        "generic_error": "Qualcosa è andato storto",
+        "403": "Operazione non autorizzata",
         "validation_error": "Errore di validazione",
-        "cannot_retrieve_installed_modules": "",
-        "401": ""
+        "cannot_retrieve_installed_modules": "Impossibile elencare moduli installati",
+        "401": "Autenticazione non valida"
     },
     "common": {
         "required": "Obbligatorio",
-        "processing": "",
-        "work_in_progress": ""
+        "processing": "Elaborazione in corso...",
+        "work_in_progress": "In lavorazione"
     }
 }
