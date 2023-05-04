@@ -1,7 +1,8 @@
 {
   "name": "collabora",
   "description": {
-    "en": "Collabora Online is a powerful LibreOffice-based online office"
+    "en": "Collabora Online is a powerful LibreOffice-based online office",
+    "it": "Collabora Online è una potente suite per ufficio online basata su LibreOffice"
   },
   "categories": ["collaboration"],
   "authors": [
