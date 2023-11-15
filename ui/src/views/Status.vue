@@ -367,7 +367,14 @@ export default {
   },
   methods: {
     goToCollaboraAdmin() {
-        window.open('https://admin:'+this.admin_password + '@' + this.host + '/browser/dist/admin/adminSettings.html');
+      const username = "admin";
+      const password = encodeURIComponent(this.admin_password);
+      const host = this.host;
+      const path = "/browser/dist/admin/adminSettings.html";
+
+      const url = `https://${username}:${password}@${host}${path}`;
+
+      window.open(url);
     },
     async getConfiguration() {
       this.loading.getConfiguration = true;
