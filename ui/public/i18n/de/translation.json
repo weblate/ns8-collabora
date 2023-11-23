@@ -1,15 +1,15 @@
 {
     "error": {
-        "403": "Operation nicht erlaubt",
+        "403": "Operation nicht zugelassen",
         "cannot_retrieve_installed_modules": "Installierte Module nicht abrufbar",
-        "401": "Fehlerhafte Anmeldung",
+        "401": "fehlerhafte Anmeldung",
         "cannot_retrieve_module_info": "Informationen zum Modul nicht abrufbar",
         "error": "Fehler",
-        "network_timeout": "Netzwerk Zeitüberschreitung",
+        "network_timeout": "Netzwerk-Zeitüberschreitung",
         "404": "Ressource nicht gefunden",
         "network_error": "Netzwerkfehler",
         "validation_error": "Überprüfungsfehler",
-        "generic_error": "Etwas ist schiefgegangen"
+        "generic_error": "Etwas ist schief gegangen"
     },
     "common": {
         "required": "erforderlich",
@@ -27,7 +27,7 @@
         "collabora_admin_url": "Admin Konsole",
         "no_services": "keine Dienste",
         "app_instance": "App-Instanz",
-        "mount": "Einbinden",
+        "mount": "Einbindepunkt",
         "title": "Status",
         "installation_node": "Installations-Knoten",
         "open_collabora_admin_page": "Konsole öffnen",
