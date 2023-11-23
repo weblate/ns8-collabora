@@ -1,1 +1,69 @@
-{}
+{
+    "error": {
+        "403": "Operation nicht erlaubt",
+        "cannot_retrieve_installed_modules": "Installierte Module nicht abrufbar",
+        "401": "Fehlerhafte Anmeldung",
+        "cannot_retrieve_module_info": "Informationen zum Modul nicht abrufbar",
+        "error": "Fehler",
+        "network_timeout": "Netzwerk Zeitüberschreitung",
+        "404": "Ressource nicht gefunden",
+        "network_error": "Netzwerkfehler",
+        "validation_error": "Überprüfungsfehler"
+    },
+    "common": {
+        "required": "erforderlich",
+        "work_in_progress": "in Arbeit",
+        "processing": "Verarbeite..."
+    },
+    "status": {
+        "created": "Erstellt",
+        "size": "Größe",
+        "name": "Name",
+        "no_images": "keine Abbilder",
+        "app_volumes": "App-Volumen | App-Volumen",
+        "services": "Dienst | Dienste",
+        "app_images": "App-Abbild | App-Abbilder",
+        "collabora_admin_url": "Admin Konsole",
+        "no_services": "keine Dienste",
+        "app_instance": "App-Instanz",
+        "mount": "Einbinden",
+        "title": "Status",
+        "installation_node": "Installations-Knoten",
+        "open_collabora_admin_page": "Konsole öffnen",
+        "node": "Knoten",
+        "no_volumes": "keine Volumen"
+    },
+    "settings": {
+        "configuring": "Konfiguriere...",
+        "disabled": "Deaktiviert",
+        "placeholder_collabora_domain": "Gebe einen voll-qualifizierten Domänennamen ein",
+        "instance_configuration": "{instance} konfigurieren",
+        "http_to_https": "HTTP zu HTTPS",
+        "collabora_fqdn": "voll-qualifizierter Domänennamen",
+        "lets_encrypt": "Let's Encrypt",
+        "placeholder_admin_password": "Kennwort eingeben",
+        "save": "Speichern",
+        "enabled": "Aktiviert",
+        "link": "Admin Konsole",
+        "domain_already_used_in_traefik": "Diese Domäne ist bereits in Verwendung in traefik",
+        "title": "Einstellungen",
+        "collabora_admin_password": "Kennwort der Admin Konsole (Benutzername 'admin')",
+        "admin_password_string_gte": "Das Kennwort muss mindestens 8 oder mehr Zeichen enthalten"
+    },
+    "about": {
+        "title": "Über"
+    },
+    "action": {
+        "list-backup-repositories": "Speicherorte von Datensicherungen auflisten",
+        "get-module-info": "Modul-Informationen abrufen",
+        "list-installed-modules": "installierte Module auflisten",
+        "list-backups": "Datensicherungen auflisten",
+        "get-status": "Status abrufen",
+        "configure-module": "Modul konfigurieren",
+        "get-configuration": "Konfiguration abrufen",
+        "get-name": "Name abrufen"
+    },
+    "task": {
+        "cannot_create_task": "Aufgabe {action} nicht erstellt"
+    }
+}
