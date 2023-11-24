@@ -1,14 +1,14 @@
 {
     "error": {
         "403": "Operation not authorized",
-        "cannot_retrieve_installed_modules": "No se pueden recuperar los módulos instalados",
-        "401": "Autenticación inválida",
-        "cannot_retrieve_module_info": "No se puede recuperar la información del módulo",
-        "generic_error": "Algo salió mal",
+        "cannot_retrieve_installed_modules": "No es posible recibir los módulos instalados",
+        "401": "Autenticación no válida",
+        "cannot_retrieve_module_info": "No es posible recibir la información del módulo",
+        "generic_error": "Algo ha salido mal",
         "error": "Error",
-        "network_timeout": "Tiempo de espera de la red",
+        "network_timeout": "Tiempo de espera de red agotado",
         "404": "Recurso no encontrado",
-        "network_error": "Error en la red",
+        "network_error": "Error de red",
         "validation_error": "Error de validación"
     },
     "common": {
@@ -17,26 +17,26 @@
         "processing": "Procesando..."
     },
     "status": {
-        "created": "Creada",
+        "created": "Creado",
         "size": "Tamaño",
         "name": "Nombre",
-        "no_images": "Sin imágenes",
-        "app_volumes": "Volumen de las aplicación | Volúmenes de las aplicaciones",
+        "no_images": "No hay imágenes",
+        "app_volumes": "Volúmen de App | Volúmenes de App",
         "services": "Servicio | Servicios",
         "app_images": "Imagen de la aplicación | Imágenes de la aplicación",
         "collabora_admin_url": "Consola de Admin",
-        "no_services": "Sin servicios",
+        "no_services": "No hay servicios",
         "app_instance": "Instancia de aplicación",
         "mount": "Montar",
         "title": "Estado",
         "installation_node": "Nodo de instalación",
         "open_collabora_admin_page": "Abrir consola",
         "node": "Nodo",
-        "no_volumes": "Sin volúmenes"
+        "no_volumes": "No hay volúmenes"
     },
     "settings": {
         "configuring": "Configurando...",
-        "disabled": "Desactivado",
+        "disabled": "Deshabilitado",
         "placeholder_collabora_domain": "Escribe un nombre de dominio completo",
         "instance_configuration": "Configurar {instance}",
         "http_to_https": "HTTP a HTTPS",
@@ -45,7 +45,7 @@
         "email_format": "Dirección de correo no válida",
         "placeholder_admin_password": "Escribe una contraseña",
         "save": "Guardar",
-        "enabled": "Activado",
+        "enabled": "Habilitado",
         "link": "Consola de Admin",
         "domain_already_used_in_traefik": "Este dominio ya está utilizado en traefik",
         "title": "Ajustes",
@@ -56,10 +56,10 @@
         "title": "Acerca de"
     },
     "action": {
-        "list-backup-repositories": "Lista de repositorios de la copia de seguridad",
+        "list-backup-repositories": "Listar repositorios de respaldo",
         "get-module-info": "Obtener información del módulo",
-        "list-installed-modules": "Lista de los módulos instalados",
-        "list-backups": "Lista de las copias de seguridad",
+        "list-installed-modules": "Listar módulos instalados",
+        "list-backups": "Listar copias de seguridad",
         "get-status": "Obtener el estado",
         "configure-module": "Configurar el módulo",
         "get-configuration": "Obtener la configuración",
