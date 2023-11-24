@@ -47,7 +47,7 @@
         "save": "Guardar",
         "enabled": "Activado",
         "link": "Consola de Admin",
-        "domain_already_used_in_traefik": "Este dominio ya está siendo utilizado en traefik",
+        "domain_already_used_in_traefik": "Este dominio ya está utilizado en traefik",
         "title": "Ajustes",
         "collabora_admin_password": "contraseña para la consola de admin (el usuario es 'admin')",
         "admin_password_string_gte": "La longitud de la contraseña debe ser igual o superior a 8 caracteres"
@@ -62,7 +62,7 @@
         "list-backups": "Listar copias de seguridad",
         "get-status": "Obtener el estado",
         "configure-module": "Configurar módulo",
-        "get-configuration": "Obtener configuración",
+        "get-configuration": "Obtener la configuración",
         "get-name": "Obtener nombre"
     },
     "task": {
