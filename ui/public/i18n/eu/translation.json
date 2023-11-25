@@ -22,7 +22,7 @@
         "name": "Izena",
         "no_images": "Irudirik ez",
         "app_volumes": "Aplikazioaren bolumena | Aplikazioen bolumenak",
-        "services": "Zerbitzu | Zerbitzuak",
+        "services": "Zerbitzua | Zerbitzuak",
         "app_images": "Aplikazioaren irudia | Aplikazioen irudiak",
         "no_services": "Zerbitzurik ez",
         "app_instance": "Aplikazioaren instantzia",
@@ -31,14 +31,26 @@
         "installation_node": "Instalazio-nodoa",
         "node": "Nodoa",
         "no_volumes": "Bolumenik ez",
-        "collabora_admin_url": "Administrazio kontsola"
+        "collabora_admin_url": "Administrazio kontsola",
+        "open_collabora_admin_page": "Kontsola ireki"
     },
     "settings": {
-        "disabled": "",
+        "disabled": "Desgaituta",
         "save": "Gorde",
         "title": "Ezarpenak",
         "enabled": "Gaituta",
-        "link": "Administrazio kontsola"
+        "link": "Administrazio kontsola",
+        "configuring": "Konfiguratzen...",
+        "placeholder_collabora_domain": "Idatzi guztiz kualifikatutako domeinu-izen bat",
+        "instance_configuration": "{instance} konfiguratu",
+        "http_to_https": "HTTP-tik HTTPS-era",
+        "collabora_fqdn": "collabora FQDN-a",
+        "lets_encrypt": "Let's Encrypt",
+        "email_format": "Helbide elektroniko baliogabea",
+        "placeholder_admin_password": "Pasahitz bat idatzi",
+        "domain_already_used_in_traefik": "Domeinu honek traefik-en erabiltzen hari da dagoeneko",
+        "collabora_admin_password": "administrazio kontsolaren pasahitza (erabiltzailea 'admin' da)",
+        "admin_password_string_gte": "Pasahitzaren luzeerak 8 karaktere baino gehiago edo berdinak izan behar du"
     },
     "about": {
         "title": "Honi buruz"
@@ -54,6 +66,6 @@
         "get-name": "Izena berreskuratu"
     },
     "task": {
-        "cannot_create_task": "Ezin da sortu zeregina {action}"
+        "cannot_create_task": "Ezin da zeregina {action} sortu"
     }
 }
