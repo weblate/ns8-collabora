@@ -30,12 +30,15 @@
         "title": "Egoera",
         "installation_node": "Instalazio-nodoa",
         "node": "Nodoa",
-        "no_volumes": "Bolumenik ez"
+        "no_volumes": "Bolumenik ez",
+        "collabora_admin_url": "Administrazio kontsola"
     },
     "settings": {
         "disabled": "",
         "save": "Gorde",
-        "title": "Ezarpenak"
+        "title": "Ezarpenak",
+        "enabled": "Gaituta",
+        "link": "Administrazio kontsola"
     },
     "about": {
         "title": "Honi buruz"
