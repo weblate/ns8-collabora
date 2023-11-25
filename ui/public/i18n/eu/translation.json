@@ -4,7 +4,7 @@
         "cannot_retrieve_installed_modules": "Ezin dira instalatutako moduluak berreskuratu",
         "401": "Autentifikazio baliogabea",
         "cannot_retrieve_module_info": "Ezin da moduluaren informazioa berreskuratu",
-        "generic_error": "Zerbait gaizki joan da",
+        "generic_error": "Zerbait okertu da",
         "error": "Errorea",
         "network_timeout": "Sarearen denbora-muga",
         "404": "Baliabidea ez da aurkitu",
