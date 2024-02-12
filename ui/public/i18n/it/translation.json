@@ -7,7 +7,7 @@
         "no_volumes": "Nessun volume",
         "open_collabora_admin_page": "Apri console",
         "services": "Servizio | Servizi",
-        "installation_node": "Nodo",
+        "installation_node": "Nodo di installazione",
         "size": "Dimensione",
         "app_images": "Immagine app|Immagini app",
         "title": "Stato",
@@ -49,7 +49,7 @@
         "get-name": "Visualizza nome",
         "list-backup-repositories": "Elenca repository di backup",
         "list-backups": "Elenca backup",
-        "list-installed-modules": "Elenco moduli installati"
+        "list-installed-modules": "Elenca moduli installati"
     },
     "error": {
         "cannot_retrieve_module_info": "Impossibile recuperare info modulo",
