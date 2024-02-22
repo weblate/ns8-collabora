@@ -38,7 +38,9 @@
     "link": "Admin console",
     "admin_password_string_gte": "The password length must be superior or equal to 8 characters",
     "placeholder_admin_password": "Type a password",
-    "placeholder_collabora_domain": "Type a fully qualified domain name"
+    "placeholder_collabora_domain": "Type a fully qualified domain name",
+    "host_pattern": "Must be a valid fully qualified domain name",
+    "host_format": "Must be a valid fully qualified domain name"
   },
   "about": {
     "title": "About"
