@@ -19,8 +19,8 @@
     },
     "settings": {
         "lets_encrypt": "Let's Encrypt",
-        "enabled": "Abilitato",
-        "disabled": "Disabilitato",
+        "enabled": "Enabled",
+        "disabled": "Disabled",
         "email_format": "Indirizzo e-mail non valido",
         "collabora_admin_password": "password per la console di amministrazione (l'utente è 'admin')",
         "link": "Console di amministrazione",
@@ -33,7 +33,9 @@
         "domain_already_used_in_traefik": "Questo dominio è già utilizzato in traefik",
         "configuring": "Configurazione...",
         "http_to_https": "Da HTTP a HTTPS",
-        "instance_configuration": "Configura {instance}"
+        "instance_configuration": "Configura {instance}",
+        "host_pattern": "Deve essere un nome di dominio pienamente qualificato valido",
+        "host_format": "Deve essere un nome di dominio pienamente qualificato valido"
     },
     "about": {
         "title": "Informazioni"

@@ -12,7 +12,7 @@
         "validation_error": "Validation error"
     },
     "common": {
-        "required": "Beharrezkoa",
+        "required": "Required",
         "work_in_progress": "Work in progress",
         "processing": "Processing..."
     },
@@ -31,31 +31,31 @@
         "installation_node": "Installation node",
         "node": "Node",
         "no_volumes": "No volumes",
-        "collabora_admin_url": "Administrazio kontsola",
-        "open_collabora_admin_page": "Kontsola ireki"
+        "collabora_admin_url": "Admin console",
+        "open_collabora_admin_page": "Open console"
     },
     "settings": {
-        "disabled": "Disabled",
-        "save": "Save",
-        "title": "Settings",
-        "enabled": "Enabled",
-        "link": "Administrazio kontsola",
         "configuring": "Configuring...",
-        "placeholder_collabora_domain": "Idatzi guztiz kualifikatutako domeinu-izen bat",
-        "instance_configuration": "Configure {instance}",
+        "disabled": "Disabled",
         "http_to_https": "HTTP to HTTPS",
-        "collabora_fqdn": "collabora FQDN-a",
         "lets_encrypt": "Let's Encrypt",
-        "email_format": "Helbide elektroniko baliogabea",
-        "placeholder_admin_password": "Pasahitz bat idatzi",
-        "domain_already_used_in_traefik": "Domeinu honek traefik-en erabiltzen hari da dagoeneko",
-        "collabora_admin_password": "administrazio kontsolaren pasahitza (erabiltzailea 'admin' da)",
-        "admin_password_string_gte": "Pasahitzaren luzeerak 8 karaktere baino gehiago edo berdinak izan behar du",
+        "save": "Save",
+        "enabled": "Enabled",
+        "title": "Settings",
+        "instance_configuration": "Configure {instance}",
+        "collabora_fqdn": "collabora FQDN",
         "host_format": "Must be a valid fully qualified domain name",
-        "host_pattern": "Must be a valid fully qualified domain name"
+        "email_format": "Invalid email address",
+        "placeholder_admin_password": "Type a password",
+        "link": "Admin console",
+        "domain_already_used_in_traefik": "This domain is already used in traefik",
+        "host_pattern": "Must be a valid fully qualified domain name",
+        "collabora_admin_password": "password for admin console (user is 'admin')",
+        "admin_password_string_gte": "The password length must be superior or equal to 8 characters",
+        "placeholder_collabora_domain": "Type a fully qualified domain name"
     },
     "about": {
-        "title": "Honi buruz"
+        "title": "About"
     },
     "action": {
         "list-backup-repositories": "List backup repositories",

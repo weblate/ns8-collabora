@@ -1,0 +1,73 @@
+{
+    "status": {
+        "size": "Size",
+        "created": "Created",
+        "name": "Name",
+        "no_images": "No images",
+        "app_volumes": "App volume | App volumes",
+        "services": "Service | Services",
+        "app_images": "App image | App images",
+        "no_services": "No services",
+        "app_instance": "App instance",
+        "mount": "Mount",
+        "title": "Status",
+        "installation_node": "Installation node",
+        "node": "Node",
+        "no_volumes": "No volumes",
+        "collabora_admin_url": "Admin console",
+        "open_collabora_admin_page": "Open console"
+    },
+    "error": {
+        "403": "Operation not authorized",
+        "cannot_retrieve_installed_modules": "Cannot retrieve installed modules",
+        "401": "Invalid authentication",
+        "cannot_retrieve_module_info": "Cannot retrieve module info",
+        "generic_error": "Something went wrong",
+        "error": "Error",
+        "network_timeout": "Network timeout",
+        "404": "Resource not found",
+        "network_error": "Network error",
+        "validation_error": "Validation error"
+    },
+    "common": {
+        "required": "Required",
+        "work_in_progress": "Work in progress",
+        "processing": "Processing..."
+    },
+    "settings": {
+        "configuring": "Configuring...",
+        "disabled": "Disabled",
+        "http_to_https": "HTTP to HTTPS",
+        "lets_encrypt": "Let's Encrypt",
+        "save": "Save",
+        "enabled": "Enabled",
+        "title": "Settings",
+        "placeholder_collabora_domain": "Type a fully qualified domain name",
+        "instance_configuration": "Configure {instance}",
+        "collabora_fqdn": "collabora FQDN",
+        "host_format": "Must be a valid fully qualified domain name",
+        "email_format": "Invalid email address",
+        "placeholder_admin_password": "Type a password",
+        "link": "Admin console",
+        "domain_already_used_in_traefik": "This domain is already used in traefik",
+        "collabora_admin_password": "password for admin console (user is 'admin')",
+        "host_pattern": "Must be a valid fully qualified domain name",
+        "admin_password_string_gte": "The password length must be superior or equal to 8 characters"
+    },
+    "about": {
+        "title": "About"
+    },
+    "action": {
+        "list-backup-repositories": "List backup repositories",
+        "get-module-info": "Get module info",
+        "list-installed-modules": "List installed modules",
+        "list-backups": "List backups",
+        "get-status": "Get status",
+        "configure-module": "Configure module",
+        "get-configuration": "Get configuration",
+        "get-name": "Get name"
+    },
+    "task": {
+        "cannot_create_task": "Cannot create task {action}"
+    }
+}
