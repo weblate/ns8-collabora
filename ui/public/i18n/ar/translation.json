@@ -1,0 +1,73 @@
+{
+    "common": {
+        "required": "مطلوب",
+        "work_in_progress": "جاري المعالجة",
+        "processing": "جاري المعالجة"
+    },
+    "status": {
+        "created": "تم الانشاء",
+        "size": "الحجم",
+        "name": "الاسم",
+        "app_volumes": "حجم التطبيق | احجام التطبيق",
+        "services": "الخدمة | الخدمات",
+        "app_images": "صورة التطبيق | صور التطبيق",
+        "node": "Node",
+        "no_images": "لا يوجد صور",
+        "collabora_admin_url": "وحدة تحكم المسؤول",
+        "no_services": "لا خدمات",
+        "app_instance": "تطبيق instance",
+        "mount": "تحميل (تلقيم)",
+        "title": "الحالة",
+        "installation_node": "تثبيت Node",
+        "open_collabora_admin_page": "فتح وحدة التحكم",
+        "no_volumes": "لايوجد احجام"
+    },
+    "error": {
+        "403": "العملية غير مصرح بها",
+        "cannot_retrieve_installed_modules": "لا يمكن استرداد الـ moduls المثبتة",
+        "401": "مصادقة غير صالحة",
+        "cannot_retrieve_module_info": "لا يمكن استرداد معلومات الـ module",
+        "generic_error": "حدث خطأ",
+        "error": "خطأ",
+        "network_timeout": "انتهت مهلة الخادم",
+        "404": "لم يتم العثور على المصدر",
+        "network_error": "خطا في الاتصال",
+        "validation_error": "خطئ في التحقق"
+    },
+    "settings": {
+        "configuring": "التهيئة ...",
+        "disabled": "مُعطل",
+        "placeholder_collabora_domain": "اكتب اسم عنوان مؤهل بالكامل",
+        "instance_configuration": "تهيئة {instance}",
+        "http_to_https": "تحويل HTTP الى HTTPS",
+        "collabora_fqdn": "collabora FQDN",
+        "lets_encrypt": "بدأ التشفير",
+        "host_format": "يجب أن يكون اسم (domain) صالحًا ومؤهلًا بالكامل",
+        "email_format": "عنوان البريد الإلكتروني غير صالح",
+        "placeholder_admin_password": "اكتب الرمز السري",
+        "save": "حفظ",
+        "enabled": "مُفعل",
+        "link": "وحدة تحكم المسؤول",
+        "domain_already_used_in_traefik": "هذا العنوان مستخدم بالفعل في traefik",
+        "host_pattern": "يجب أن يكون اسم (domain) صالحًا ومؤهلًا بالكامل",
+        "title": "إعدادات",
+        "collabora_admin_password": "كلمة المرور لوحدة تحكم المسؤول (المستخدم هو \"المسؤول\")",
+        "admin_password_string_gte": "يجب أن يكون طول كلمة المرور أكبر أو يساوي 8 أحرف"
+    },
+    "about": {
+        "title": "معلومات"
+    },
+    "action": {
+        "list-backup-repositories": "قائمة مستودعات النسخ الاحتياطي",
+        "get-module-info": "احصل على معلومات الـ module",
+        "list-installed-modules": "قائمة الـ modules المثبتة",
+        "list-backups": "قائمة النسخ الاحتياطية",
+        "get-status": "معلومات الحالة",
+        "configure-module": "تهيئة الـmodule",
+        "get-configuration": "احصل على التهيئة",
+        "get-name": "احصل على إسم"
+    },
+    "task": {
+        "cannot_create_task": "لا يمكن إنشاء المهمة {action}"
+    }
+}
