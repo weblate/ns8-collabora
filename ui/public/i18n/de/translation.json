@@ -36,7 +36,7 @@
     },
     "settings": {
         "configuring": "Konfiguriere...",
-        "disabled": "Disabled",
+        "disabled": "Deaktiviert",
         "placeholder_collabora_domain": "Gebe einen voll-qualifizierten Domänennamen ein",
         "instance_configuration": "{instance} konfigurieren",
         "http_to_https": "HTTP zu HTTPS",
@@ -44,7 +44,7 @@
         "lets_encrypt": "Let's Encrypt",
         "placeholder_admin_password": "Kennwort eingeben",
         "save": "Speichern",
-        "enabled": "Enabled",
+        "enabled": "Aktiviert",
         "link": "Admin Konsole",
         "domain_already_used_in_traefik": "Diese Domäne wird in Traefik bereits verwendet",
         "title": "Einstellungen",
