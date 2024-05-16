@@ -19,8 +19,8 @@
     },
     "settings": {
         "lets_encrypt": "Let's Encrypt",
-        "enabled": "Enabled",
-        "disabled": "Disabled",
+        "enabled": "Abilitato",
+        "disabled": "Disabilitato",
         "email_format": "Indirizzo e-mail non valido",
         "collabora_admin_password": "password per la console di amministrazione (l'utente è 'admin')",
         "link": "Console di amministrazione",
@@ -67,7 +67,7 @@
     },
     "common": {
         "required": "Obbligatorio",
-        "processing": "Elaborazione in corso...",
+        "processing": "In elaborazione…",
         "work_in_progress": "In lavorazione"
     }
 }
