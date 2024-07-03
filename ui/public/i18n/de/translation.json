@@ -1,20 +1,20 @@
 {
     "error": {
-        "403": "Operation nicht genehmigt",
-        "cannot_retrieve_installed_modules": "Installierte Module können nicht abgerufen werden",
-        "401": "Ungültige Authentifizierung",
-        "cannot_retrieve_module_info": "Modul-Info kann nicht abgerufen werden",
+        "403": "Vorgang nicht autorisiert",
+        "cannot_retrieve_installed_modules": "Fehler beim Abruf installierter Module",
+        "401": "Authentifizierung fehlerhaft",
+        "cannot_retrieve_module_info": "Fehler beim Abruf der Modul-Info",
         "error": "Fehler",
         "network_timeout": "Netzwerk-Zeitüberschreitung",
         "404": "Ressource nicht gefunden",
         "network_error": "Netzwerk-Fehler",
-        "validation_error": "Überprüfungsfehler",
+        "validation_error": "Fehler bei der Validierung",
         "generic_error": "Etwas ist schief gegangen"
     },
     "common": {
         "required": "Erforderlich",
-        "work_in_progress": "in Arbeit",
-        "processing": "Verarbeite..."
+        "work_in_progress": "In Bearbeitung",
+        "processing": "Verarbeitung läuft..."
     },
     "status": {
         "created": "Erstellt",
@@ -26,10 +26,10 @@
         "app_images": "App Abbild | App Abbilder",
         "collabora_admin_url": "Admin Konsole",
         "no_services": "Keine Dienste",
-        "app_instance": "App-Instanz",
-        "mount": "Einhängepunkt",
+        "app_instance": "App Instanz",
+        "mount": "Mount",
         "title": "Status",
-        "installation_node": "Installations-Knoten",
+        "installation_node": "Knoten der Installation",
         "open_collabora_admin_page": "Konsole öffnen",
         "node": "Knoten",
         "no_volumes": "Keine Volumen"
@@ -58,14 +58,14 @@
         "title": "Über"
     },
     "action": {
-        "list-backup-repositories": "Datensicherungs-Ziele auflisten",
+        "list-backup-repositories": "Backup-Speicherorte auflisten",
         "get-module-info": "Modul-Info abrufen",
-        "list-installed-modules": "installierte Modules auflisten",
-        "list-backups": "Datensicherungen auflisten",
+        "list-installed-modules": "Installierte Module auflisten",
+        "list-backups": "Backups auflisten",
         "get-status": "Status abrufen",
         "configure-module": "Modul konfigurieren",
         "get-configuration": "Konfiguration abrufen",
-        "get-name": "Namen abrufen"
+        "get-name": "Name abrufen"
     },
     "task": {
         "cannot_create_task": "Aufgabe {action} kann nicht erstellt werden"
