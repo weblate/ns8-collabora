@@ -4,7 +4,6 @@ Description=Podman  collabora.service
 [Service]
 Environment=PODMAN_SYSTEMD_UNIT=%n
 EnvironmentFile=%S/state/environment
-EnvironmentFile=%S/state/password.env
 WorkingDirectory=%S/state
 Restart=always
 TimeoutStopSec=70
@@ -14,7 +13,7 @@ ExecStart=/usr/bin/podman run --conmon-pidfile %t/collabora.pid \
     --replace -d --name  collabora --cap-add MKNOD \
     --env aliasgroup2=https://${TRAEFIK_HOST}:443 \
     --env username=admin \
-    --env password=${ADMIN_PASSWORD} \
+    --env-file=%S/state/password.env \
     --env "extra_params=--o:ssl.enable=false --o:ssl.termination=true --o:security.capabilities=false" \
     --env dictionnaries="de_DE en_GB en_US es_ES fr_FR it nl pt_BR pt_PT ru" \
     --publish 127.0.0.1:${TCP_PORT}:9980 \

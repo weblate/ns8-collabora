@@ -42,12 +42,8 @@ password = data.get("admin_password", "")
 agent.set_env("TRAEFIK_HOST", host)
 agent.set_env("TRAEFIK_HTTP2HTTPS", h2hs)
 agent.set_env("TRAEFIK_LETS_ENCRYPT", le)
-agent.set_env("ADMIN_PASSWORD", password)
-password = {"ADMIN_PASSWORD": password}
-agent.write_envfile("password.env", password)
-# Make sure everything is saved inside the environment file
-# just before starting systemd unit
-agent.dump_env()
+agent.write_envfile("password.env", {"password": password})
+
 
 # Find default traefik instance for current node
 default_traefik_id = agent.resolve_agent_id('traefik@node')
