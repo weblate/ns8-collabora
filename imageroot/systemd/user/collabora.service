@@ -11,7 +11,7 @@ ExecStartPre=/bin/rm -f %t/collabora.pid %t/collabora.ctr-id
 ExecStart=/usr/bin/podman run --conmon-pidfile %t/collabora.pid \
     --cidfile %t/collabora.ctr-id --cgroups=no-conmon \
     --replace -d --name  collabora --cap-add MKNOD \
-    --network=slirp4netns:allow_host_loopback=true \
+    --network=slirp4netns \
     --env aliasgroup2=https://${TRAEFIK_HOST}:443 \
     --env username=admin \
     --env-file=%S/state/password.env \
