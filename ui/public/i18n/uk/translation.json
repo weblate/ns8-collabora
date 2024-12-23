@@ -1,0 +1,73 @@
+{
+    "common": {
+        "required": "Обов'язковий",
+        "work_in_progress": "Робота в процесі",
+        "processing": "Обробка..."
+    },
+    "status": {
+        "name": "Ім'я",
+        "created": "Створено",
+        "size": "Розмір",
+        "no_images": "Немає зображень",
+        "app_volumes": "Гучність програми | Обсяги програми",
+        "services": "Сервіс | Послуги",
+        "app_images": "Зображення програми | Зображення програми",
+        "collabora_admin_url": "Консоль адміністратора",
+        "no_services": "Без послуг",
+        "app_instance": "Екземпляр програми",
+        "mount": "кріплення",
+        "title": "Статус",
+        "installation_node": "Вузол установки",
+        "open_collabora_admin_page": "Відкрити консоль",
+        "node": "Вузол",
+        "no_volumes": "Жодних томів"
+    },
+    "error": {
+        "error": "Помилка",
+        "403": "Операція не авторизована",
+        "cannot_retrieve_installed_modules": "Неможливо отримати встановлені модулі",
+        "401": "Недійсна автентифікація",
+        "cannot_retrieve_module_info": "Неможливо отримати інформацію про модуль",
+        "generic_error": "Щось пішло не так",
+        "network_timeout": "Час очікування мережі",
+        "404": "Ресурс не знайдено",
+        "network_error": "Помилка мережі",
+        "validation_error": "Помилка підтвердження"
+    },
+    "settings": {
+        "configuring": "Налаштування...",
+        "disabled": "Вимкнено",
+        "placeholder_collabora_domain": "Введіть повністю кваліфіковану доменне ім'я",
+        "instance_configuration": "Налаштувати {instance}",
+        "http_to_https": "HTTP до HTTPS",
+        "collabora_fqdn": "колабора FQDN",
+        "lets_encrypt": "Давайте зашифруємо",
+        "host_format": "Має бути дійсне повне доменне ім’я",
+        "email_format": "Недійсна адреса електронної пошти",
+        "placeholder_admin_password": "Введіть пароль",
+        "save": "зберегти",
+        "enabled": "Увімкнено",
+        "link": "Консоль адміністратора",
+        "domain_already_used_in_traefik": "Цей домен уже використовується в traefik",
+        "host_pattern": "Має бути дійсне повне доменне ім’я",
+        "title": "Налаштування",
+        "collabora_admin_password": "пароль для консолі адміністратора (користувач - 'admin')",
+        "admin_password_string_gte": "Довжина пароля повинна бути відмінною або дорівнює 8 символів"
+    },
+    "action": {
+        "get-module-info": "Отримати інформацію про модуль",
+        "list-backup-repositories": "Список репозиторіїв резервного копіювання",
+        "list-installed-modules": "Список встановлених модулів",
+        "list-backups": "Список резервних копій",
+        "get-status": "Отримати статус",
+        "configure-module": "Налаштувати модуль",
+        "get-configuration": "Отримати конфігурацію",
+        "get-name": "Отримати назву"
+    },
+    "about": {
+        "title": "про"
+    },
+    "task": {
+        "cannot_create_task": "Неможливо створити завдання {action}"
+    }
+}
