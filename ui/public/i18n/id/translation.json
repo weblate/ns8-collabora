@@ -3,10 +3,10 @@
         "size": "Ukuran",
         "created": "Dibuat",
         "name": "Nama",
-        "no_images": "Tidak ada gambar",
+        "no_images": "Tidak ada citra",
         "app_volumes": "Volume aplikasi | Volume aplikasi",
         "services": "Pelayanan | Layanan",
-        "app_images": "Gambar aplikasi | Gambar aplikasi",
+        "app_images": "Citra aplikasi | Citra aplikasi",
         "collabora_admin_url": "Konsol admin",
         "no_services": "Tidak ada layanan",
         "app_instance": "Contoh aplikasi",
@@ -52,7 +52,7 @@
     "common": {
         "required": "Diperlukan",
         "work_in_progress": "Sedang berlangsung",
-        "processing": "Proses..."
+        "processing": "Pemrosesan…"
     },
     "about": {
         "title": "Mengenai"
